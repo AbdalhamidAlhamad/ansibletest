@@ -1,0 +1,4 @@
+devopss ansible_ssh_host=52.91.114.124 ansible_user=ubuntu
+
+[webserver]
+devopss

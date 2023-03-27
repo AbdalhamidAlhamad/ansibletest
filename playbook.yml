@@ -1,0 +1,18 @@
+---
+- name: Configure nginx
+  hosts: webserver
+  become: yes
+  tasks:
+  - name: Install nginx
+    apt:
+      name: nginx
+      state: present
+  - name: Starting nginx
+    service:
+      name: nginx
+      enabled: true
+      state: started
+  - name: Copy Configurations
+    copy:
+      src: learnansible.com
+      dest: /etc/nginx/sites-enabled/learnansible.com
